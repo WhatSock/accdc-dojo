@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>AccDC - Accelerated Dynamic Content</title>
+<meta http-equiv="Content-Language" content="en" />
+<meta name="description" content="AccDC is a scalable, cross-browser and cross-platform compatible Dynamic Content Management System that automates the rendering of dynamic content to ensure accessibility for screen reader and keyboard only users." />
+<meta name="keywords" content="interface designs, user interface automation, internet application design, user interface components, application user interface design, dynamic content management, interface designers, rich interface application, dynamic content management system, interface designing, rich internet app, rich internet apps, user interface design web, application ui, ria development, rich internet application design, ui web design, web design user interface, ui interface design, ui designing, automation ui, accessible rich internet application, rich user interface design" />
+<meta name="Author" content="Bryan Garaventa" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+
+<script type="text/javascript" src="dojo/dojo.js" data-dojo-config="async:true">
+// Load Dojo asynchronously.
+</script>
+
+<script type="text/javascript">
+
+// Configure AccDC modules and scripts to be loaded synchronously for flow control
+InitAccDC = [
+'js/carousel_module.min.js',
+'js/css_drag_drop_module_for_standalone_and_dojo.min.js',
+'js/helpers.js',
+'js/ready.js'
+];
+
+// Now load the AccDC API using the Dojo AMD Loader
+// The referenced AccDC API file is located at dojo/acc.dc.api.js
+require(['dojo/acc.dc.api']);
+
+</script>
+
+</head>
+<body>
+<div>
+
+<div class="menuLinks" role="navigation" aria-label="left">
+<div class="logo">
+<img title="WhatSock : Changing the world one step at a time" alt="WhatSock : Changing the world one step at a time" src="img/whatsock_logo.jpg" />
+</div>
+<ul class="menuList">
+<li>
+<a id="tab1" role="button" aria-pressed="false" title="Overview">
+<span>
+Overview
+</span>
+</a>
+</li>
+<li>
+<a id="tab2" role="button" aria-pressed="false" title="Automatic Accessibility Framework">
+<span>
+Accessibility
+</span>
+</a>
+</li>
+<li>
+<a id="tab3" role="button" aria-pressed="false" title="Live Demo">
+<span>
+Live Demo
+</span>
+</a>
+</li>
+<li>
+<a id="tab4" role="button" aria-pressed="false" title="Core API Documentation">
+<span>
+Core API
+</span>
+</a>
+</li>
+<li>
+<a id="tab5" role="button" aria-pressed="false" title="Contact Us">
+<span>
+Contact Us
+</span>
+</a>
+</li>
+</ul>
+<ul class="lsn">
+<li>
+<a href="http://whatsock.com/tsg">
+AccDC Technical Style Guide
+</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/groups/Accessible-Innovators-4512178">
+Accessible Innovators
+</a>
+</li>
+</ul>
+<div>
+<a class="button blue" href="http://whatsock.com/donate" role="button">
+<span>
+Donate
+</span>
+</a>
+</div>
+</div>
+
+<div class="hd">
+<h1>
+<span>
+AccDC : Accelerated Dynamic Content
+</span>
+</h1>
+</div>
+
+<div class="intro content" id="AccDCCurrentVer">
+<span id="AccDCCurrentVerS1"></span>
+<span id="AccDCCurrentVerS2"></span>
+</div>
+
+<div id="mContent">
+
+<div id="mcOverview">
+
+<div class="intro announce" id="ph"></div>
+
+<div class="intro content">
+<p>
+AccDC is a scalable, cross-browser and cross-platform compatible Dynamic Content Management System that automates the rendering of dynamic content to ensure accessibility for screen reader and keyboard only users.
+</p>
+</div>
+
+<div class="intro content">
+<div class="slides" id="slideCanvas"></div>
+</div>
+
+<div class="intro content">
+<p class="honors clearfix">
+<a href="http://thersa.org" target="_blank"><img
+src="img/rsa_fellowship_logo.jpg"
+alt="Supported by the Royal Society of Arts"
+title="Supported by the Royal Society of Arts"
+/></a>
+<span>
+AccDC was awarded the "Above and Beyond Accessibility Award" from the United States Department of Labor, and was presented at the Developing with Accessibility Event, hosted by the Federal Communications Commission in Washington DC in 2012.
+</span>
+</p>
+<p>
+<b>
+For specific coding guidance, view the
+<a href="http://whatsock.com/tsg">
+AccDC Technical Style Guide
+</a>
+</b>
+</p>
+<p>
+<a href="http://whatsock.com/donate">
+<span>
+Please consider contributing to this project by donating.
+</span>
+</a>
+</p>
+</div>
+
+<div class="hd">
+<h2>
+<span>
+Overview
+</span>
+</h2>
+</div>
+
+<div class="intro content">
+<p>
+AccDC is a free development resource for international businesses, organizations, and academic institutions wishing to incorporate Accessible Innovation within future web technologies.
+</p>
+<p>
+"Accessible Innovation" refers to the creation of new technologies that include Accessibility as a core platform feature of development.
+</p>
+<p>
+AccDC functions as a rendering engine, which acts as a conduit for the accessible processing of dynamic content.
+</p>
+<p>
+Developers can now build fully functional, scalable, feature rich, accessible user interface components that are encapsulated as AccDC Objects, which can then be freely distributed to empower the creation of accessible controls, widgets, features, and applications within all future web technologies.
+</p>
+<p>
+The AccDC Component Library is provided as a collection of customizable functionality templates that can be easily adapted to fit the design and implementation requirements of any application, and are accessible for screen reader and keyboard only users.
+</p>
+<p>
+AccDC can be used within mobile browsers such as the iPhone, iPad, and Android devices for cross platform compatibility, and can also be used within the web browser components of desktop applications for enterprise distribution.
+</p>
+</div>
+
+<div class="hd">
+<h2>
+<span>
+How It Works
+</span>
+</h2>
+</div>
+
+<div class="intro content">
+<p>
+AccDC generates independent JavaScript objects, called AccDC Objects, that include customizable properties and methods which are used to control the functionality, content, and behavior of each AccDC Object at runtime.
+</p>
+<p>
+This makes it possible to render any type of user interface component, including wizards, carousels, dialogs, toolbars, tooltips, popups, lightboxes, menus, banners, tab controls, drag and drop controls, toggles, sliders, calendar pickers, or any other type of fully functional accessible user interface component.
+</p>
+<p>
+AccDC includes integrated ARIA support to enhance intuitive page structuring for screen reader users, as well as a recursive Announce method that
+can be used to send textual messages to be dynamically announced for screen reader users. Additional ARIA attributes may be dynamically added to enhance advanced controls using AccDC's in-built Flow Control methods.
+</p>
+<p>
+AccDC renders HTML/XHTML valid markup, HTML5, DOM nodes, JavaScript output, XML node content, JSON object data, and content from remote API callbacks.
+</p>
+<p>
+AccDC automates accessibility by managing the processes associated with dynamic content rendering, so that the majority of common accessibility issues are automatically addressed when DOM manipulation occurs.
+</p>
+<p>
+Since AccDC Objects are code structures for encapsulated objects, they can be redistributed as fully functional components that include in-built accessibility for screen reader and keyboard only users, so that accessible user interface components can self-propagate across various web technologies.
+</p>
+<p>
+When AccDC Objects are opened in the DOM, the specified content is surrounded by a framework of supporting Divs that convey important role and state information for screen reader users. Based on the customizations within the AccDC Object, the content is then inserted into the DOM in an accessible location, supporting accessibility markup is added, display styling is set, behavioral settings are applied, and Flow Control methods are executed.
+</p>
+<p>
+Additionally, AccDC Objects can be interfaced with other AccDC Objects to perform complex tasks, or nested within one another to preserve parent/child relationships.
+</p>
+<p>
+AccDC is a closed system, and functions as a standalone API, or may be used in conjunction with any library or framework without conflict.
+</p>
+<p>
+Since the <a href="http://idpf.org/epub/30/spec/epub30-contentdocs.html#app-epubReadingSystem" target="_blank">EPUB3</a> specification supports the use of JavaScript, AccDC may also be included within EPUB3 compliant eBook publications to automate accessible dynamic behaviors within browser based eBook readers.
+</p>
+</div>
+
+<div class="hd">
+<h2>
+<span>
+AccDC Bootstrap
+</span>
+</h2>
+</div>
+
+<div class="intro content">
+<p>
+AccDC Bootstrap is an HTML parser that renders advanced, accessible interactive controls using semantic HTML markup.
+</p>
+<p>
+Bootstrapping refers to the use of semantic HTML markup to configure advanced controls, which are then magically converted into dynamic interactive components when the content finishes loading.
+</p>
+<p>
+This allows developers to include complex functionality that is fully configurable across thousands of web pages, without having to program individual components using JavaScript. 
+</p>
+<p>
+AccDC Bootstrap is designed to automatically enforce accessibility, while making it possible to populate individual components with any type of content, in any language, using any visual styling.  
+</p>
+<p>
+<a href="http://whatsock.com/bootstrap">
+Curious? Try out AccDC Bootstrap!
+</a>
+</p>
+</div>
+
+<div class="hd">
+<h2>
+<span>
+Downloads
+</span>
+</h2>
+</div>
+
+<div class="intro content">
+<ul><li>
+The AccDC API Quick Reference Guide (Standalone)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/accdc">
+https://github.com/accdc/accdc
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/accdc/archive/master.zip">
+https://github.com/accdc/accdc/archive/master.zip
+</a>
+</li><li>
+The AccDC API Quick Reference Guide (for jQuery)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/accdc-jquery">
+https://github.com/accdc/accdc-jquery
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/accdc-jquery/archive/master.zip">
+https://github.com/accdc/accdc-jquery/archive/master.zip
+</a>
+</li><li>
+The AccDC API Quick Reference Guide (for Dojo)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/accdc-dojo">
+https://github.com/accdc/accdc-dojo
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/accdc-dojo/archive/master.zip">
+https://github.com/accdc/accdc-dojo/archive/master.zip
+</a>
+</li><li>
+AccDC Bootstrap (Standalone)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/bootstrap">
+https://github.com/accdc/bootstrap
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/bootstrap/archive/master.zip">
+https://github.com/accdc/bootstrap/archive/master.zip
+</a>
+</li><li>
+AccDC Bootstrap (for jQuery)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/bootstrap-jquery">
+https://github.com/accdc/bootstrap-jquery
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/bootstrap-jquery/archive/master.zip">
+https://github.com/accdc/bootstrap-jquery/archive/master.zip
+</a>
+</li><li>
+AccDC Bootstrap (for Dojo)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/bootstrap-dojo">
+https://github.com/accdc/bootstrap-dojo
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/bootstrap-dojo/archive/master.zip">
+https://github.com/accdc/bootstrap-dojo/archive/master.zip
+</a>
+</li><li>
+The AccDC Technical Style Guide and Coding Arena (for Standalone and jQuery)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/tsg">
+https://github.com/accdc/tsg
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/tsg/archive/master.zip">
+https://github.com/accdc/tsg/archive/master.zip
+</a>
+</li><li>
+The AccDC Technical Style Guide and Coding Arena (for Dojo)
+<br />
+GitHub:
+<a target="custom" href="https://github.com/accdc/tsg-dojo">
+https://github.com/accdc/tsg-dojo
+</a>
+<br />
+Zip:
+<a target="custom" href="https://github.com/accdc/tsg-dojo/archive/master.zip">
+https://github.com/accdc/tsg-dojo/archive/master.zip
+</a>
+</li></ul>
+</div>
+
+<div class="hd">
+<h2>
+<span>
+Demos
+</span>
+</h2>
+</div>
+
+<div class="intro content">
+<p>
+<b>
+For specific coding guidance, view the
+<a href="http://whatsock.com/tsg">
+AccDC Technical Style Guide
+</a>
+</b>
+</p>
+<ul><li>
+<a href="modules/standard_dynamic_control_templates/demo.htm">
+Accessible Modal, Banner, Tooltip, and Popup controls.
+</a>
+</li><li>
+<a href="modules/aria_tabs_menu_modules/demo.htm">
+ARIA Tabs and context sensitive dropdown Menu controls.
+</a>
+</li><li>
+<a href="modules/aria_tree_from_xml_module/demo.htm">
+ARIA Tree controls.
+</a>
+</li><li>
+<a href="modules/css_drag_drop_module/demo.htm">
+Screen reader accessible Drag and Drop controls.
+</a>
+</li><li>
+<a href="modules/auto_suggestion_search_field_module/demo.htm">
+Auto Suggestion Search Field controls.
+</a>
+</li><li>
+<a href="modules/aria_sortable_listbox_module/demo.htm">
+ARIA Listbox controls that support optional sortability, list item deletion, and dynamic addition of list items.
+</a>
+</li><li>
+<a href="modules/aria_footnote_generator_module/demo.htm">
+ARIA Footnote controls.
+</a>
+</li><li>
+<a href="modules/accessible_chat_dialog_module/demo.htm">
+Accessible Live Chat controls.
+</a>
+</li><li>
+<a href="modules/aria_slider_module/demo.htm">
+Horizontal and vertical ARIA Slider controls.
+</a>
+</li><li>
+<a href="modules/aria_calendar_module/demo.htm">
+ARIA Date Picker controls.
+</a>
+</li><li>
+<a href="modules/aria_accordion_module/demo.htm">
+ARIA Accordion controls.
+</a>
+</li><li>
+<a href="modules/carousel_from_xml_module/demo.htm">
+Accessible Carousel, Slideshow, and Wizard controls.
+</a>
+</li><li>
+<a href="modules/form_validator_module/demo.htm">
+Accessible Dynamic Help Tooltips and Form Field Validation.
+</a>
+</li></ul>
+</div>
+
+<div class="hd">
+<h2>
+<span>
+Accessibility Articles
+</span>
+</h2>
+</div>
+
+<div class="intro content">
+<ol><li>
+<a href="http://lnkd.in/jYnkZq">
+The three fundamental principles of accessibility for web technologies, and why keyboard accessibility isn't the same thing as screen reader accessibility.
+</a>
+</li><li>
+<a href="http://lnkd.in/5nPudh">
+Why you should not use ARIA role=tab on header navigation tabs that look like tabs but aren't actually tabs.
+</a>
+</li><li>
+<a href="http://lnkd.in/vcvyQz">
+The use of role=alert and role=presentation, and the not-so-well known details about them.
+</a>
+</li><li>
+<a href="http://lnkd.in/kue-Q8">
+How browsers interact with screen readers, and where ARIA fits in the mix.
+</a>
+</li></ol>
+</div>
+
+</div>
+
+</div>
+
+<div class="topLink">
+<a href="#"><img src="img/up.png" title="Back to Top" alt="Back to Top" /></a>
+</div>
+
+<div role="navigation" aria-label="bottom">
+<ul class="policies clearfix">
+<li class="policy">
+<a id="tab6" role="button" aria-pressed="false" title="About Us">
+<span>
+About
+</span>
+</a>
+</li>
+<li class="policy">
+<a id="tab7" role="button" aria-pressed="false" title="Legal-FTC Guides Disclosures">
+<span>
+Legal
+</span>
+</a>
+</li>
+<li class="policy">
+<a id="tab8" role="button" aria-pressed="false" title="Terms of Use">
+<span>
+Terms
+</span>
+</a>
+</li>
+<li class="policy">
+<a id="tab9" role="button" aria-pressed="false" title="Privacy Policy">
+<span>
+Privacy
+</span>
+</a>
+</li>
+</ul>
+</div>
+
+<div class="copyright">
+<span>
+&copy;2010-2013 WhatSock, LLC;
+All rights reserved.
+</span>
+</div>
+
+</div>
+</body>
+</html>
