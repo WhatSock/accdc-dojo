@@ -1,4 +1,4 @@
-AccDC API - 3.0 for Dojo (02/26/2014)
+AccDC API - 3.0 for Dojo (03/14/2014)
 =====
 
 AccDC is a scalable, cross-browser and cross-platform compatible Dynamic Content Management System that automates the rendering of dynamic content to ensure accessibility for screen reader and keyboard only users.
